@@ -49,11 +49,11 @@ def read_thermistor():
 # 读取数据并保存到CSV文件
 def loop():
     timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    directory = '/root/lab-data'
+    directory = './output-data'
     if not os.path.exists(directory):
         os.makedirs(directory)
     filename = f'{directory}/sensor_data_{timestamp}.csv'
-    print(f"Write to {filename}")
+    print(f"Write to {os.path.abspath(filename)}")
 
     with open(filename, 'w') as file:
         writer = csv.writer(file)
