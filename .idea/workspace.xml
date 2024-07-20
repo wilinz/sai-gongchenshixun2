@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31517d70-9b92-4488-af29-7891f1d3c19d" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sai-gongchenshixun.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PCF8591.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/collect_sensor_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaoxueqi/python3/collect_sensor_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/开发板结构.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/开发板结构实拍.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_pressure" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_pressure" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_temperature" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_temperature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/Adafruit_CharLCD/Adafruit_CharLCD.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/Adafruit_CharLCD/Adafruit_CharLCD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_backpack.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_backpack.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_mcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_mcp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_plate.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_plate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb_pwm.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb_pwm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/AdafruitDHT.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/AdafruitDHT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/google_spreadsheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/google_spreadsheet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_LED_Backpack/Adafruit_LED_Backpack/Matrix8x16.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_LED_Backpack/Adafruit_LED_Backpack/Matrix8x16.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/apa102_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/apa102_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/box_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/box_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/larson_hue.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/larson_hue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/matrix_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/matrix_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_crawl.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_crawl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neosegment_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neosegment_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/sevensegment_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/sevensegment_demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_neosegment.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_neosegment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_segment_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_segment_mapper.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/xiaoxueqi/python3/16.segment.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2jUaEtj9ckKd9DaYfqXaJQKFBoZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.16.segment.executor": "Run",
+    "Python.30.photoresistor.executor": "Run",
+    "Python.32.thermistor.executor": "Run",
+    "Python.33.ds18b20.executor": "Run",
+    "Python.34.barometer.executor": "Run",
+    "Python.8.dh11.executor": "Run",
+    "Python.collect_sensor_data (1).executor": "Run",
+    "Python.collect_sensor_data.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/wilinz/PycharmProjects/sai-gongchenshixun",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wilinz\PycharmProjects\sai-gongchenshixun" />
+      <recent name="C:\Users\wilinz\PycharmProjects\sai-gongchenshixun\xiaoxueqi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wilinz\PycharmProjects\readme.md" />
+      <recent name="C:\Users\wilinz\PycharmProjects\sai-gongchenshixun" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.collect_sensor_data (1)">
+    <configuration name="33.ds18b20" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sai-gongchenshixun" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xiaoxueqi/python3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiaoxueqi/python3/33.ds18b20.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="34.barometer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sai-gongchenshixun" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xiaoxueqi/python3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiaoxueqi/python3/34.barometer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="8.dh11" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sai-gongchenshixun" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xiaoxueqi/python3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiaoxueqi/python3/8.dh11.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="collect_sensor_data (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sai-gongchenshixun" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/collect_sensor_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="collect_sensor_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sai-gongchenshixun" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xiaoxueqi/python3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiaoxueqi/python3/collect_sensor_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.collect_sensor_data (1)" />
+        <item itemvalue="Python.collect_sensor_data" />
+        <item itemvalue="Python.8.dh11" />
+        <item itemvalue="Python.34.barometer" />
+        <item itemvalue="Python.33.ds18b20" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.18034.82" />
+        <option value="bundled-python-sdk-975db3bf15a3-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="31517d70-9b92-4488-af29-7891f1d3c19d" name="更改" comment="" />
+      <created>1721444000773</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721444000773</updated>
+      <workItem from="1721444001844" duration="7318000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$32_thermistor.coverage" NAME="32.thermistor 覆盖结果" MODIFIED="1721448958071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$collect_sensor_data__1_.coverage" NAME="collect_sensor_data (1) 覆盖结果" MODIFIED="1721451655157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$33_ds18b20.coverage" NAME="33.ds18b20 覆盖结果" MODIFIED="1721448996402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$30_photoresistor.coverage" NAME="30.photoresistor 覆盖结果" MODIFIED="1721448781550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$34_barometer.coverage" NAME="34.barometer 覆盖结果" MODIFIED="1721449006850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$collect_sensor_data.coverage" NAME="collect_sensor_data 覆盖结果" MODIFIED="1721451525724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$8_dh11.coverage" NAME="8.dh11 覆盖结果" MODIFIED="1721449051488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$16_segment.coverage" NAME="16.segment 覆盖结果" MODIFIED="1721444840549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+  </component>
+</project>

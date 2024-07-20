@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example/Drivers/Adafruit_Python_BMP" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example/Drivers/Adafruit_Python_CharLCD" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example/Drivers/Adafruit_Python_DHT" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example/Drivers/Adafruit_Python_LED_Backpack" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example/Drivers/luma.led_matrix" vcs="Git" />
+  </component>
+</project>
