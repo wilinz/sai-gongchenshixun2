@@ -13,7 +13,7 @@ import math
 
 # DHT11 温湿度传感器管脚定义
 DHT_PIN = 17
-INTERVAL = 10  # 采集间隔，单位：秒
+INTERVAL = 30  # 采集间隔，单位：秒
 
 # 初始化各个传感器
 def setup():
