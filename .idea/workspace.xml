@@ -4,43 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31517d70-9b92-4488-af29-7891f1d3c19d" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sai-gongchenshixun.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PCF8591.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/collect_sensor_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaoxueqi/python3/collect_sensor_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/开发板结构.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/开发板结构实拍.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_pressure" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_pressure" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_temperature" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_BMP/munin/i2c_temperature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/Adafruit_CharLCD/Adafruit_CharLCD.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/Adafruit_CharLCD/Adafruit_CharLCD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_backpack.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_backpack.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_mcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_mcp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_plate.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_plate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb_pwm.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_CharLCD/examples/char_lcd_rgb_pwm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/AdafruitDHT.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/AdafruitDHT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/google_spreadsheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_DHT/examples/google_spreadsheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_LED_Backpack/Adafruit_LED_Backpack/Matrix8x16.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/Adafruit_Python_LED_Backpack/Adafruit_LED_Backpack/Matrix8x16.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/apa102_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/apa102_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/box_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/box_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/larson_hue.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/larson_hue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/matrix_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/matrix_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_crawl.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_crawl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neopixel_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neosegment_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/neosegment_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/sevensegment_demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/examples/sevensegment_demo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_neosegment.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_neosegment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_segment_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxueqi/Drivers/luma.led_matrix/tests/test_segment_mapper.py" afterDir="false" />
+    <list default="true" id="31517d70-9b92-4488-af29-7891f1d3c19d" name="更改" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/data_description.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/sample_submission.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/train.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rain_in_australia.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,12 +224,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721444000773</updated>
-      <workItem from="1721444001844" duration="7318000" />
+      <workItem from="1721444001844" duration="7783000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1721451937293</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721451937293</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$32_thermistor.coverage" NAME="32.thermistor 覆盖结果" MODIFIED="1721448958071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
