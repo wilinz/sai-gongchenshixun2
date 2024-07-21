@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31517d70-9b92-4488-af29-7891f1d3c19d" name="更改" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/data_description.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/sample_submission.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/house-prices-advanced-regression-techniques/train.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rain_in_australia.py" afterDir="false" />
+    <list default="true" id="31517d70-9b92-4488-af29-7891f1d3c19d" name="更改" comment="update">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sai-gongchenshixun.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sai-gongchenshixun.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/Drivers/luma.led_matrix/examples/view_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/example/Drivers/luma.led_matrix/examples/view_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/rain_in_australia.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/rain_in_australia.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,76 +37,56 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/xiaoxueqi/python3/16.segment.py" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2jUaEtj9ckKd9DaYfqXaJQKFBoZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.16.segment.executor": "Run",
-    "Python.30.photoresistor.executor": "Run",
-    "Python.32.thermistor.executor": "Run",
-    "Python.33.ds18b20.executor": "Run",
-    "Python.34.barometer.executor": "Run",
-    "Python.8.dh11.executor": "Run",
-    "Python.collect_sensor_data (1).executor": "Run",
-    "Python.collect_sensor_data.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/wilinz/PycharmProjects/sai-gongchenshixun",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.16.segment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.30.photoresistor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.32.thermistor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.33.ds18b20.executor&quot;: &quot;Run&quot;,
+    &quot;Python.34.barometer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.8.dh11.executor&quot;: &quot;Run&quot;,
+    &quot;Python.collect_sensor_data (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.collect_sensor_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.rain_in_australia.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/wilinz/PycharmProjects/sai-gongchenshixun&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\wilinz\PycharmProjects\sai-gongchenshixun" />
       <recent name="C:\Users\wilinz\PycharmProjects\sai-gongchenshixun\xiaoxueqi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wilinz\PycharmProjects\sai-gongchenshixun\lab1" />
       <recent name="C:\Users\wilinz\PycharmProjects\readme.md" />
       <recent name="C:\Users\wilinz\PycharmProjects\sai-gongchenshixun" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.collect_sensor_data (1)">
-    <configuration name="33.ds18b20" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="sai-gongchenshixun" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xiaoxueqi/python3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiaoxueqi/python3/33.ds18b20.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.rain_in_australia">
     <configuration name="34.barometer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="sai-gongchenshixun" />
       <option name="ENV_FILES" value="" />
@@ -198,13 +179,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="rain_in_australia" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="sai-gongchenshixun" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lab1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab1/rain_in_australia.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rain_in_australia" />
         <item itemvalue="Python.collect_sensor_data (1)" />
         <item itemvalue="Python.collect_sensor_data" />
         <item itemvalue="Python.8.dh11" />
         <item itemvalue="Python.34.barometer" />
-        <item itemvalue="Python.33.ds18b20" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +228,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721444000773</updated>
-      <workItem from="1721444001844" duration="7783000" />
+      <workItem from="1721444001844" duration="28659000" />
+      <workItem from="1721562368322" duration="2658000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -234,24 +239,69 @@
       <option name="project" value="LOCAL" />
       <updated>1721451937293</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1721452460834</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721452460834</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <option name="closed" value="true" />
+      <created>1721452472628</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721452472628</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1721452738909</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721452738909</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <option name="closed" value="true" />
+      <created>1721459253885</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721459253885</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$32_thermistor.coverage" NAME="32.thermistor 覆盖结果" MODIFIED="1721448958071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
-    <SUITE FILE_PATH="coverage/sai_gongchenshixun$collect_sensor_data__1_.coverage" NAME="collect_sensor_data (1) 覆盖结果" MODIFIED="1721451655157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$collect_sensor_data__1_.coverage" NAME="collect_sensor_data (1) 覆盖结果" MODIFIED="1721452659038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$33_ds18b20.coverage" NAME="33.ds18b20 覆盖结果" MODIFIED="1721448996402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$30_photoresistor.coverage" NAME="30.photoresistor 覆盖结果" MODIFIED="1721448781550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$34_barometer.coverage" NAME="34.barometer 覆盖结果" MODIFIED="1721449006850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$collect_sensor_data.coverage" NAME="collect_sensor_data 覆盖结果" MODIFIED="1721451525724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$8_dh11.coverage" NAME="8.dh11 覆盖结果" MODIFIED="1721449051488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
     <SUITE FILE_PATH="coverage/sai_gongchenshixun$16_segment.coverage" NAME="16.segment 覆盖结果" MODIFIED="1721444840549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoxueqi/python3" />
+    <SUITE FILE_PATH="coverage/sai_gongchenshixun$rain_in_australia.coverage" NAME="rain_in_australia 覆盖结果" MODIFIED="1721564973401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lab1" />
   </component>
 </project>
