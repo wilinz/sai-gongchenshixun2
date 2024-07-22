@@ -1,7 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/usr/bin/python3
 
-# 收集数据脚本
+# 收集数据脚本，在 collect_sensor_data.py 的基础加上光强传感器
 import PCF8591 as ADC
 import RPi.GPIO as GPIO
 import time
@@ -11,24 +10,40 @@ import Adafruit_DHT
 import Adafruit_BMP.BMP085 as BMP085
 import os
 import math
+import smbus
 
 # DHT11 温湿度传感器管脚定义
 DHT_PIN = 17
 INTERVAL = 30  # 采集间隔，单位：秒
 
+# 默认设备I2C地址
+BH1750_DEVICE = 0x5c  # BH1750光传感器默认设备I2C地址
+
+# 设置BH1750光传感器测量模式
+ONE_TIME_HIGH_RES_MODE_1 = 0x20
+
+
 # 初始化各个传感器
 def setup():
     ADC.setup(0x48)  # 设置PCF8591模块地址
-    global bmp_sensor, dht_sensor, ds18b20_device
+    global bmp_sensor, dht_sensor, ds18b20_device, bus
     bmp_sensor = BMP085.BMP085()  # 气压传感器
     dht_sensor = Adafruit_DHT.DHT11  # 温湿度传感器
     ds18b20_device = setup_ds18b20()  # DS18B20温度传感器
+
+    # 初始化I2C总线
+    if (GPIO.RPI_REVISION == 1):
+        bus = smbus.SMBus(0)
+    else:
+        bus = smbus.SMBus(1)
+
 
 # 设置DS18B20温度传感器
 def setup_ds18b20():
     for i in os.listdir('/sys/bus/w1/devices'):
         if i != 'w1_bus_master1':
             return i
+
 
 # 读取DS18B20温度值
 def read_ds18b20():
@@ -39,6 +54,7 @@ def read_ds18b20():
     temperature = float(temperature_data[2:]) / 1000
     return round(temperature, 2)
 
+
 # 读取热敏电阻温度值
 def read_thermistor():
     analog_val = ADC.read(2)
@@ -46,6 +62,19 @@ def read_thermistor():
     rt = 10000 * vr / (5 - vr)
     temperature = 1 / ((math.log(rt / 10000) / 3950) + (1 / (273.15 + 25))) - 273.15
     return round(temperature, 2)
+
+
+# 转换BH1750数据
+def convertToNumber(data):
+    result = (data[1] + (256 * data[0])) / 1.2
+    return result
+
+
+# 读取BH1750光传感器数据
+def read_bh1750(addr=BH1750_DEVICE):
+    data = bus.read_i2c_block_data(addr, ONE_TIME_HIGH_RES_MODE_1)
+    return convertToNumber(data)
+
 
 # 读取数据并保存到CSV文件
 def loop():
@@ -60,7 +89,7 @@ def loop():
         writer = csv.writer(file)
         writer.writerow(
             ['timestamp', 'photoresistor', 'bmp_temp', 'bmp_pressure', 'bmp_altitude', 'dht_temp', 'dht_humidity',
-             'ds18b20_temp', 'thermistor_temp'])
+             'ds18b20_temp', 'thermistor_temp', 'bh1750_light'])
 
         rows_per_day = int(86400 / INTERVAL)
         estimated_size_per_row = 100  # 估计每行100字节
@@ -85,16 +114,14 @@ def loop():
                 dht_temp = round(dht_temp, 2)
             ds18b20_temp = read_ds18b20()
             thermistor_temp = read_thermistor()
+            bh1750_light = read_bh1750()
 
             writer.writerow(
                 [now, photoresistor, bmp_temp, bmp_pressure, bmp_altitude, dht_temp, dht_humidity, ds18b20_temp,
-                 thermistor_temp])
+                 thermistor_temp, bh1750_light])
             file.flush()  # 刷新文件缓冲区
             print(
-                f'[{now}] Photoresistor: {photoresistor}, BMP Temp: {bmp_temp}, BMP Pressure: {bmp_pressure}, BMP Altitude: {bmp_altitude}, DHT Temp: {dht_temp}, DHT Humidity: {dht_humidity}, DS18B20 Temp: {ds18b20_temp}, Thermistor Temp: {thermistor_temp}')
-
-            print(
-                f'[{now}] 光敏电阻: {photoresistor}, BMP 温度: {bmp_temp}, BMP 气压: {bmp_pressure}, BMP 海拔: {bmp_altitude}, DHT 温度: {dht_temp}, DHT 湿度: {dht_humidity}, DS18B20 温度: {ds18b20_temp}, 热敏电阻 温度: {thermistor_temp}')
+                f'[{now}] Photoresistor: {photoresistor}, BMP Temp: {bmp_temp}, BMP Pressure: {bmp_pressure}, BMP Altitude: {bmp_altitude}, DHT Temp: {dht_temp}, DHT Humidity: {dht_humidity}, DS18B20 Temp: {ds18b20_temp}, Thermistor Temp: {thermistor_temp}, BH1750 Light: {bh1750_light} lx')
 
             end_time = time.time()  # 记录循环结束时间
             elapsed_time = end_time - start_time  # 计算本次循环的执行时间
@@ -102,9 +129,11 @@ def loop():
             sleep_time = max(0, INTERVAL - elapsed_time)  # 确保休眠时间不为负数
             time.sleep(sleep_time)
 
+
 # 释放资源
 def destroy():
     GPIO.cleanup()
+
 
 # 程序入口
 if __name__ == '__main__':
