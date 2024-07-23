@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        h1 { text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+        th { background-color: #f4f4f4; }
+        .interval-input { margin-top: 20px; text-align: center; }
+        .chart-container { width: 100%; height: 500px; margin-top: 20px; }
+        .download-btn { text-align: center; margin-top: 20px; }
+    </style>
+    <!-- 引入 ECharts 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>实时传感器数据</h1>
+        <div class="interval-input">
+            <label for="interval">刷新间隔（秒）：</label>
+            <input type="number" id="interval" value="1" min="1">
+            <button onclick="updateInterval()">更新间隔</button>
+        </div>
+        <table id="sensorData">
+            <tr>
+                <th>传感器</th>
+                <th>数据</th>
+            </tr>
+            <tr><td>光敏电阻</td><td id="photoresistor">--</td></tr>
+            <tr><td>BMP 温度 (°C)</td><td id="bmp_temp">--</td></tr>
+            <tr><td>BMP 气压 (Pa)</td><td id="bmp_pressure">--</td></tr>
+            <tr><td>BMP 海拔 (m)</td><td id="bmp_altitude">--</td></tr>
+            <tr><td>DHT 温度 (°C)</td><td id="dht_temp">--</td></tr>
+            <tr><td>DHT 湿度 (%)</td><td id="dht_humidity">--</td></tr>
+            <tr><td>DS18B20 温度 (°C)</td><td id="ds18b20_temp">--</td></tr>
+            <tr><td>热敏电阻 温度 (°C)</td><td id="thermistor_temp">--</td></tr>
+            <tr><td>BH1750 光强 (lx)</td><td id="bh1750_light">--</td></tr>
+        </table>
+        <div class="download-btn">
+            <a href="/export" download>导出数据为CSV</a>
+        </div>
+        <!-- 创建用于显示图表的 DOM 节点 -->
+        <div class="chart-container" id="temperatureChart"></div>
+        <div class="chart-container" id="pressureChart"></div>
+        <div class="chart-container" id="lightChart"></div>
+        <div class="chart-container" id="photoresistorChart"></div>
+    </div>
+    <script>
+        var interval = document.getElementById('interval').value;
+        var source = new EventSource('/sensor_data?interval=' + interval);
+
+        // 初始化 ECharts 实例
+        var temperatureChart = echarts.init(document.getElementById('temperatureChart'));
+        var pressureChart = echarts.init(document.getElementById('pressureChart'));
+        var lightChart = echarts.init(document.getElementById('lightChart'));
+        var photoresistorChart = echarts.init(document.getElementById('photoresistorChart'));
+
+        // 温度图表配置项
+        var temperatureOption = {
+            title: {
+                text: '温度传感器数据趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['BMP 温度', 'DHT 温度', 'DS18B20 温度', '热敏电阻 温度']
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {name: 'BMP 温度', type: 'line', data: []},
+                {name: 'DHT 温度', type: 'line', data: []},
+                {name: 'DS18B20 温度', type: 'line', data: []},
+                {name: '热敏电阻 温度', type: 'line', data: []}
+            ],
+            dataZoom: [
+                {
+                    type: 'slider',
+                    start: 0,
+                    end: 100
+                },
+                {
+                    type: 'inside',
+                    start: 0,
+                    end: 100
+                }
+            ]
+        };
+
+        // 气压图表配置项
+        var pressureOption = {
+            title: {
+                text: '气压传感器数据趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['BMP 气压']
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {name: 'BMP 气压', type: 'line', data: []}
+            ],
+            dataZoom: [
+                {
+                    type: 'slider',
+                    start: 0,
+                    end: 100
+                },
+                {
+                    type: 'inside',
+                    start: 0,
+                    end: 100
+                }
+            ]
+        };
+
+        // 光强图表配置项
+        var lightOption = {
+            title: {
+                text: '光强传感器数据趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['BH1750 光强']
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {name: 'BH1750 光强', type: 'line', data: []}
+            ],
+            dataZoom: [
+                {
+                    type: 'slider',
+                    start: 0,
+                    end: 100
+                },
+                {
+                    type: 'inside',
+                    start: 0,
+                    end: 100
+                }
+            ]
+        };
+
+        // 光敏电阻图表配置项
+        var photoresistorOption = {
+            title: {
+                text: '光敏电阻数据趋势'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['光敏电阻']
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: []
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {name: '光敏电阻', type: 'line', data: []}
+            ],
+            dataZoom: [
+                {
+                    type: 'slider',
+                    start: 0,
+                    end: 100
+                },
+                {
+                    type: 'inside',
+                    start: 0,
+                    end: 100
+                }
+            ]
+        };
+
+        // 使用配置项生成图表
+        temperatureChart.setOption(temperatureOption);
+        pressureChart.setOption(pressureOption);
+        lightChart.setOption(lightOption);
+        photoresistorChart.setOption(photoresistorOption);
+
+        source.addEventListener('message', function(e) {
+            var data = JSON.parse(e.data);
+            var currentTime = new Date().toLocaleTimeString();
+
+            // 更新 X 轴数据
+            temperatureOption.xAxis.data.push(currentTime);
+            pressureOption.xAxis.data.push(currentTime);
+            lightOption.xAxis.data.push(currentTime);
+            photoresistorOption.xAxis.data.push(currentTime);
+            if (temperatureOption.xAxis.data.length > 20) {
+                temperatureOption.xAxis.data.shift();
+                pressureOption.xAxis.data.shift();
+                lightOption.xAxis.data.shift();
+                photoresistorOption.xAxis.data.shift();
+            }
+
+            // 更新系列数据
+            temperatureOption.series[0].data.push(data.bmp_temp);
+            temperatureOption.series[1].data.push(data.dht_temp);
+            temperatureOption.series[2].data.push(data.ds18b20_temp);
+            temperatureOption.series[3].data.push(data.thermistor_temp);
+
+            pressureOption.series[0].data.push(data.bmp_pressure);
+
+            lightOption.series[0].data.push(data.bh1750_light);
+
+            photoresistorOption.series[0].data.push(data.photoresistor);
+
+            temperatureChart.setOption(temperatureOption);
+            pressureChart.setOption(pressureOption);
+            lightChart.setOption(lightOption);
+            photoresistorChart.setOption(photoresistorOption);
+
+            document.getElementById('photoresistor').innerText = data.photoresistor + ' units';
+            document.getElementById('bmp_temp').innerText = data.bmp_temp + ' °C';
+            document.getElementById('bmp_pressure').innerText = data.bmp_pressure + ' Pa';
+            document.getElementById('bmp_altitude').innerText = data.bmp_altitude + ' m';
+            document.getElementById('dht_temp').innerText = data.dht_temp + ' °C';
+            document.getElementById('dht_humidity').innerText = data.dht_humidity + ' %';
+            document.getElementById('ds18b20_temp').innerText = data.ds18b20_temp + ' °C';
+            document.getElementById('thermistor_temp').innerText = data.thermistor_temp + ' °C';
+            document.getElementById('bh1750_light').innerText = data.bh1750_light + ' lx';
+        }, false);
+
+        function updateInterval() {
+            interval = document.getElementById('interval').value;
+            source.close();
+            source = new EventSource('/sensor_data?interval=' + interval);
+            source.addEventListener('message', function(e) {
+                var data = JSON.parse(e.data);
+                var currentTime = new Date().toLocaleTimeString();
+
+                // 更新 X 轴数据
+                temperatureOption.xAxis.data.push(currentTime);
+                pressureOption.xAxis.data.push(currentTime);
+                lightOption.xAxis.data.push(currentTime);
+                photoresistorOption.xAxis.data.push(currentTime);
+                if (temperatureOption.xAxis.data.length > 20) {
+                    temperatureOption.xAxis.data.shift();
+                    pressureOption.xAxis.data.shift();
+                    lightOption.xAxis.data.shift();
+                    photoresistorOption.xAxis.data.shift();
+                }
+
+                // 更新系列数据
+                temperatureOption.series[0].data.push(data.bmp_temp);
+                temperatureOption.series[1].data.push(data.dht_temp);
+                temperatureOption.series[2].data.push(data.ds18b20_temp);
+                temperatureOption.series[3].data.push(data.thermistor_temp);
+
+                pressureOption.series[0].data.push(data.bmp_pressure);
+
+                lightOption.series[0].data.push(data.bh1750_light);
+
+                photoresistorOption.series[0].data.push(data.photoresistor);
+
+                temperatureChart.setOption(temperatureOption);
+                pressureChart.setOption(pressureOption);
+                lightChart.setOption(lightOption);
+                photoresistorChart.setOption(photoresistorOption);
+
+                document.getElementById('photoresistor').innerText = data.photoresistor + ' units';
+                document.getElementById('bmp_temp').innerText = data.bmp_temp + ' °C';
+                document.getElementById('bmp_pressure').innerText = data.bmp_pressure + ' Pa';
+                document.getElementById('bmp_altitude').innerText = data.bmp_altitude + ' m';
+                document.getElementById('dht_temp').innerText = data.dht_temp + ' °C';
+                document.getElementById('dht_humidity').innerText = data.dht_humidity + ' %';
+                document.getElementById('ds18b20_temp').innerText = data.ds18b20_temp + ' °C';
+                document.getElementById('thermistor_temp').innerText = data.thermistor_temp + ' °C';
+                document.getElementById('bh1750_light').innerText = data.bh1750_light + ' lx';
+            }, false);
+        }
+    </script>
+</body>
+</html>

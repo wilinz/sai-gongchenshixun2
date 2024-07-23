@@ -1,6 +1,5 @@
-# 自定义数据处理1：WebUi 实时监测传感器
-
 #!/usr/bin/python3
+import csv
 import json
 import PCF8591 as ADC
 import RPi.GPIO as GPIO
@@ -11,7 +10,7 @@ import Adafruit_BMP.BMP085 as BMP085
 import os
 import math
 import smbus
-from flask import Flask, Response, request, jsonify, render_template_string
+from flask import Flask, Response, request, jsonify, render_template, send_file
 
 # Flask app
 app = Flask(__name__)
@@ -25,6 +24,8 @@ BH1750_DEVICE = 0x5c  # BH1750光传感器默认设备I2C地址
 # 设置BH1750光传感器测量模式
 ONE_TIME_HIGH_RES_MODE_1 = 0x20
 
+# 用于保存传感器数据的列表
+sensor_data_list = []
 
 # 初始化各个传感器
 def setup():
@@ -93,7 +94,8 @@ def read_sensors():
     thermistor_temp = read_thermistor()
     bh1750_light = round(read_bh1750(), 4)
 
-    return {
+    data = {
+        'time': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
         'photoresistor': photoresistor,
         'bmp_temp': bmp_temp,
         'bmp_pressure': bmp_pressure,
@@ -104,6 +106,8 @@ def read_sensors():
         'thermistor_temp': thermistor_temp,
         'bh1750_light': bh1750_light
     }
+    sensor_data_list.append(data)
+    return data
 
 
 # http://192.168.137.69:5000/sensor_data?interval=1
@@ -123,88 +127,21 @@ def sensor_data():
     return Response(generate(interval), mimetype='text/event-stream')
 
 
+# 导出传感器数据为CSV
+@app.route('/export')
+def export():
+    keys = sensor_data_list[0].keys()
+    with open('/tmp/sensor_data.csv', 'w', newline='') as output_file:
+        dict_writer = csv.DictWriter(output_file, fieldnames=keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(sensor_data_list)
+    return send_file('/tmp/sensor_data.csv', as_attachment=True)
+
+
 # Web UI
 @app.route('/')
 def index():
-    return render_template_string('''
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sensor Data</title>
-        <style>
-            body { font-family: Arial, sans-serif; }
-            .container { width: 80%; margin: 0 auto; padding: 20px; }
-            h1 { text-align: center; }
-            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-            th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
-            th { background-color: #f4f4f4; }
-            .interval-input { margin-top: 20px; text-align: center; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>实时传感器数据</h1>
-            <div class="interval-input">
-                <label for="interval">刷新间隔（秒）：</label>
-                <input type="number" id="interval" value="1" min="1">
-                <button onclick="updateInterval()">更新间隔</button>
-            </div>
-            <table id="sensorData">
-                <tr>
-                    <th>传感器</th>
-                    <th>数据</th>
-                </tr>
-                <tr><td>光敏电阻</td><td id="photoresistor">--</td></tr>
-                <tr><td>BMP 温度 (°C)</td><td id="bmp_temp">--</td></tr>
-                <tr><td>BMP 气压 (Pa)</td><td id="bmp_pressure">--</td></tr>
-                <tr><td>BMP 海拔 (m)</td><td id="bmp_altitude">--</td></tr>
-                <tr><td>DHT 温度 (°C)</td><td id="dht_temp">--</td></tr>
-                <tr><td>DHT 湿度 (%)</td><td id="dht_humidity">--</td></tr>
-                <tr><td>DS18B20 温度 (°C)</td><td id="ds18b20_temp">--</td></tr>
-                <tr><td>热敏电阻 温度 (°C)</td><td id="thermistor_temp">--</td></tr>
-                <tr><td>BH1750 光强 (lx)</td><td id="bh1750_light">--</td></tr>
-            </table>
-        </div>
-        <script>
-            var interval = document.getElementById('interval').value;
-            var source = new EventSource('/sensor_data?interval=' + interval);
-
-            source.addEventListener('message', function(e) {
-                var data = JSON.parse(e.data);
-                document.getElementById('photoresistor').innerText = data.photoresistor + ' units';
-                document.getElementById('bmp_temp').innerText = data.bmp_temp + ' °C';
-                document.getElementById('bmp_pressure').innerText = data.bmp_pressure + ' Pa';
-                document.getElementById('bmp_altitude').innerText = data.bmp_altitude + ' m';
-                document.getElementById('dht_temp').innerText = data.dht_temp + ' °C';
-                document.getElementById('dht_humidity').innerText = data.dht_humidity + ' %';
-                document.getElementById('ds18b20_temp').innerText = data.ds18b20_temp + ' °C';
-                document.getElementById('thermistor_temp').innerText = data.thermistor_temp + ' °C';
-                document.getElementById('bh1750_light').innerText = data.bh1750_light + ' lx';
-            }, false);
-
-            function updateInterval() {
-                interval = document.getElementById('interval').value;
-                source.close();
-                source = new EventSource('/sensor_data?interval=' + interval);
-                source.addEventListener('message', function(e) {
-                    var data = JSON.parse(e.data);
-                    document.getElementById('photoresistor').innerText = data.photoresistor + ' units';
-                    document.getElementById('bmp_temp').innerText = data.bmp_temp + ' °C';
-                    document.getElementById('bmp_pressure').innerText = data.bmp_pressure + ' Pa';
-                    document.getElementById('bmp_altitude').innerText = data.bmp_altitude + ' m';
-                    document.getElementById('dht_temp').innerText = data.dht_temp + ' °C';
-                    document.getElementById('dht_humidity').innerText = data.dht_humidity + ' %';
-                    document.getElementById('ds18b20_temp').innerText = data.ds18b20_temp + ' °C';
-                    document.getElementById('thermistor_temp').innerText = data.thermistor_temp + ' °C';
-                    document.getElementById('bh1750_light').innerText = data.bh1750_light + ' lx';
-                }, false);
-            }
-        </script>
-    </body>
-    </html>
-    ''')
+    return render_template('index.html')
 
 
 # Main entry point
