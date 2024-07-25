@@ -101,8 +101,8 @@ X_test = scaler.transform(X_test)
 X_train_split, X_val, y_train_split, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=60)
 
 # 使用随机森林分类器和梯度提升分类器
-rf_model = RandomForestClassifier(n_estimators=2000, random_state=60)
-gb_model = GradientBoostingClassifier(n_estimators=2000, random_state=60)
+rf_model = RandomForestClassifier(n_estimators=200, random_state=60)
+gb_model = GradientBoostingClassifier(n_estimators=200, random_state=60)
 
 # 使用投票分类器组合模型
 voting_model = VotingClassifier(estimators=[('rf', rf_model), ('gb', gb_model)], voting='soft')

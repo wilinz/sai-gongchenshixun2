@@ -22,22 +22,27 @@ comfort_humidity_range = (40, 70)
 # 计算每小时的舒适性
 def calculate_comfort_rate(data):
     comfort_hours = 0
-    total_hours = len(data['timestamp'].dt.hour.unique())
+    total_hours = len(data['timestamp'].dt.hour.unique())  # 计算总的小时数
 
-    hourly_data = data.groupby(data['timestamp'].dt.hour)
+    hourly_data = data.groupby(data['timestamp'].dt.hour)  # 按小时分组数据
     hourly_comfort = {}
     for hour, group in hourly_data:
+        # 计算温度在舒适范围内的比例
         temp_in_range = group['thermistor_temp'].between(comfort_temp_range[0], comfort_temp_range[1]).mean()
+        # 计算湿度在舒适范围内的比例
         humidity_in_range = group['dht_humidity'].between(comfort_humidity_range[0], comfort_humidity_range[1]).mean()
 
+        # 判断是否在该小时内温度和湿度都在舒适范围内
         is_comfortable = temp_in_range > 0.5 and humidity_in_range > 0.5
         hourly_comfort[hour] = is_comfortable
 
         if is_comfortable:
-            comfort_hours += 1
+            comfort_hours += 1  # 如果该小时内温度和湿度都在舒适范围内，则舒适小时数加1
 
+    # 计算舒适率
     comfort_rate = (comfort_hours / total_hours) * 100
-    return comfort_rate, hourly_comfort
+    return comfort_rate, hourly_comfort  # 返回舒适率和每小时的舒适状态
+
 
 
 # 绘制每分钟温湿度变化
