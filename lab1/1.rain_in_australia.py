@@ -39,15 +39,12 @@ from sklearnex import patch_sklearn
 patch_sklearn()
 
 dir = "guet-saI-for-2024/"
-# 加载数据集
 train_data = pd.read_csv(dir+'Weather_train.csv')
 test_data = pd.read_csv(dir+'weather_test.csv')
 
-# 解析日期列
 train_data['Date'] = pd.to_datetime(train_data['Date'])
 test_data['Date'] = pd.to_datetime(test_data['Date'])
 
-# 提取日期相关的特征
 train_data['Year'] = train_data['Date'].dt.year
 train_data['Month'] = train_data['Date'].dt.month
 train_data['Season'] = train_data['Month'] % 12 // 3 + 1
@@ -56,10 +53,10 @@ test_data['Year'] = test_data['Date'].dt.year
 test_data['Month'] = test_data['Date'].dt.month
 test_data['Season'] = test_data['Month'] % 12 // 3 + 1
 
-# 删除 RainTomorrow 为 nan 的数据
+
 train_data = train_data.dropna(subset=['RainToday','RainTomorrow'])
 
-# 填充缺失值
+
 for column in train_data.columns:
     if train_data[column].dtype == 'object':
         train_data[column] = train_data[column].fillna(train_data[column].mode()[0])
@@ -72,7 +69,7 @@ for column in test_data.columns:
     else:
         test_data[column] = test_data[column].fillna(test_data[column].median())
 
-# 编码分类变量
+
 label_encoders = {}
 for column in train_data.select_dtypes(include=['object']).columns:
     label_encoders[column] = LabelEncoder()
@@ -85,42 +82,33 @@ for column in test_data.select_dtypes(include=['object']).columns:
         le.classes_ = np.append(le.classes_, 'other')
         test_data[column] = le.transform(test_data[column])
 
-# 分离特征和目标变量
+
+scaler = StandardScaler()
+
 X_train = train_data.drop(columns=['RainTomorrow', 'id', 'Date'])
 y_train = train_data['RainTomorrow']
-
-# 标准化数值特征
-scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 
-# 删除测试数据中的 'id' 列
 X_test = test_data.drop(columns=['id', 'Date'])
 X_test = scaler.transform(X_test)
 
-# 将训练数据拆分为训练集和验证集
+
 X_train_split, X_val, y_train_split, y_val = train_test_split(X_train, y_train, test_size=0.2, random_state=60)
 
-# 使用随机森林分类器和梯度提升分类器
 rf_model = RandomForestClassifier(n_estimators=200, random_state=60)
 gb_model = GradientBoostingClassifier(n_estimators=200, random_state=60)
 
-# 使用投票分类器组合模型
 voting_model = VotingClassifier(estimators=[('rf', rf_model), ('gb', gb_model)], voting='soft')
 
-# 训练投票分类器
 voting_model.fit(X_train_split, y_train_split)
 
-# 在验证集上进行预测
 y_val_pred = voting_model.predict(X_val)
 
-# 评估模型
 accuracy = accuracy_score(y_val, y_val_pred)
 print(f'验证集准确率: {accuracy:.4f}')
 
-# 在测试数据上进行预测
 test_data['RainTomorrow'] = voting_model.predict(X_test)
 
-# 准备提交文件
 submission = test_data[['id', 'RainTomorrow']].copy()
 submission['RainTomorrow'] = submission['RainTomorrow'].astype(int)
 submission['RainTomorrow'] = submission['RainTomorrow'].map({1: 'Yes', 0: 'No'})
